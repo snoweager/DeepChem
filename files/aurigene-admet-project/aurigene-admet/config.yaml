@@ -1,0 +1,48 @@
+# ============================================================
+# ADMET-Net Configuration
+# Aurigene Pharmaceutical Services | AIDD Group
+# ============================================================
+
+# ── Data ────────────────────────────────────────────────────
+data:
+  data_dir:   "data/raw"
+  val_frac:   0.10
+  test_frac:  0.10
+  seed:       42
+  fp_radius:  2       # Morgan fingerprint radius (r=2 → ECFP4)
+  fp_bits:    2048    # Morgan fingerprint bit length
+
+# ── Model Architecture ───────────────────────────────────────
+model:
+  node_dim:     128   # GNN hidden node dimension
+  edge_dim:     64    # GNN edge feature dimension
+  n_layers:     4     # Number of MPNN (GATv2) layers
+  fp_embed_dim: 256   # Fingerprint MLP output dimension
+  shared_dim:   512   # Shared representation dimension after fusion
+  head_hidden:          # Task-specific head hidden layers
+    - 256
+    - 128
+  dropout:      0.2   # Dropout rate (also enables MC Dropout at inference)
+  gat_heads:    4     # Number of attention heads in GATv2Conv
+
+# ── Training ─────────────────────────────────────────────────
+training:
+  n_epochs:     150
+  batch_size:   32
+  lr:           0.0003       # Initial learning rate (AdamW)
+  lr_min:       0.000001     # Minimum LR for cosine annealing
+  weight_decay: 0.0001       # L2 regularization
+  clip_grad:    1.0          # Gradient clipping max norm
+  patience:     20           # Early stopping patience
+  T_0:          10           # Cosine annealing restart period (epochs)
+  T_mult:       2            # Cosine annealing period multiplier
+  num_workers:  4            # DataLoader workers
+
+# ── Inference ────────────────────────────────────────────────
+inference:
+  mc_passes:     20          # MC Dropout passes for uncertainty
+  ad_threshold:  0.40        # Tanimoto AD threshold
+
+# ── Output ───────────────────────────────────────────────────
+output_dir: "models/"
+results_dir: "results/"
