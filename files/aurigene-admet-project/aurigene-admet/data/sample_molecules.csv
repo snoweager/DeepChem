@@ -1,0 +1,11 @@
+smiles,name,indication,source
+CC(=O)Nc1ccc(O)cc1,Paracetamol,Analgesic/Antipyretic,Reference
+CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C,Testosterone,Anabolic Steroid,Reference
+OC(CCCN1CCC(CC1)(c1ccccc1)c1ccccc1)c1ccc(C(C)(C)C)cc1,Terfenadine,Antihistamine (hERG blocker),Reference
+Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1,Imatinib,BCR-ABL Kinase Inhibitor,Reference
+O=C(O)c1ccccc1O,Salicylic Acid,NSAID,Reference
+CC(=O)Oc1ccccc1C(=O)O,Aspirin,NSAID/Antiplatelet,Reference
+CN(C)C(=N)NC(=N)N,Metformin,Antidiabetic (T2D),Reference
+COc1cc2c(cc1OC)CC1CN(CCc3cc(OC)c(OC)cc31)CC2,Papaverine,Antispasmodic,Reference
+O=C(O)Cc1ccc(Oc2ccc(Cl)cc2)cc1,Fenofibric Acid,Lipid-lowering,Reference
+Nc1ccc(S(=O)(=O)Nc2ccccn2)cc1,Sulfadiazine,Antibiotic,Reference
